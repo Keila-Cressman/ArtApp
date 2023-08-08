@@ -1,4 +1,4 @@
-const userData = {
+const UserData = {
   name:"",
   password:"",
   setName: function(name){
@@ -17,18 +17,17 @@ const userData = {
   }
 };
 
-// import { userData } from "./userData";
 
 let userName = document.getElementById("username");
 let userPass = document.getElementById("password");
 let newUser = document.getElementById("newUser");
 
-function verifyUser(){
+function verifyUser(person){
   if (userName.value == "" || userPass.value == "") {
     alert("Enter a new Username or Password");
   }
-  else if ((userData.name.toLowerCase() == userName.value.toLowerCase() &&
-    userData.password.toLowerCase() == userPass.value.toLowerCase()) ||
+  else if ((UserData.name.toLowerCase() == userName.value.toLowerCase() &&
+    UserData.password.toLowerCase() == userPass.value.toLowerCase()) ||
     (localStorage.getItem("setName").toLowerCase() == userName.value.toLowerCase() &&
     localStorage.getItem("setPass").toLowerCase() == userPass.value.toLowerCase())) {
     location.href = "../blog/blog.html";
@@ -42,11 +41,12 @@ function createUser(){
   if (userName.value == "" || userPass.value == ""){
     alert("Enter a new Username or Password");
   }else{
-    userData.setName(userName.value);
-    userData.setPass(userPass.value);
+    UserData.setName(userName.value);
+    UserData.setPass(userPass.value);
     let p = document.createElement("p");
     p.innerHTML = "User Created - now log in with credentials";
     newUser.appendChild(p);
   }
   
 }
+

@@ -1,19 +1,16 @@
-export const userData = {
-  userID: "",
-  name: "",
-  password: "",
-  setName: function (name) {
-    this.name = name;
-    localStorage.setItem("setName", name);
-  },
-  getName: function () {
-    return users.name;
-  },
-  setPass: function (pass) {
-    this.password = pass;
-    localStorage.setItem("setPass", pass);
-  },
-  getPass: function () {
-    return users.password;
+export default class UserData {
+  constructor(name,password){
+    this.getName = () => name;
+    this.getPass = () => password;
+
+    this.setName = (name) => {
+      name = name;
+      localStorage.setItem("setName",name);
+    }
+
+    this.setPass = (pass) => {
+      password = pass; 
+      localStorage.setItem("setPass", pass);
+    };
   }
-};
+}

@@ -3,9 +3,10 @@
 <div>
   <input type="text" id="username" placeholder="Username">
   <input type="text" id="password" placeholder="Password">
-  <button onclick="verifyUser()">Log In</button>
+  <button onclick="verifyUser(this.username)">Log In</button>
   <button onclick="createUser()">Create Account</button>
   <p id="newUser"></p>
 </div>
 
 <script src="logIn.js"></script>
+
